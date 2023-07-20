@@ -23,5 +23,36 @@ const myJSON = {
   ],
 };
 const userToAdd = { name: 'Alice', age: 35 };
-addObjectToArrayInJSON(myJSON, 'users', userToAdd);
+addObjectToArray(myJSON, 'users', userToAdd);
 console.log(myJSON);
+
+//Concept of Currying
+function add(a) {
+  return function (b) {
+    return a + b;
+  };
+}
+const add5 = add(5);
+console.log(add5(3)); // Output: 8
+
+//concept of bind
+const obj = { name: 'John' };
+function greet() {
+  console.log(`Hello, ${this.name}!`);
+}
+const boundGreet = greet.bind(obj);
+boundGreet(); // Output: Hello, John!
+
+//example of call
+const ob = { name: 'John' };
+function greet() {
+  console.log(`Hello, ${this.name}!`);
+}
+greet.call(ob); // Output: Hello, John!
+
+//example of apply
+const obje = { name: 'John' };
+function greet(greeting) {
+  console.log(`${greeting}, ${this.name}!`);
+}
+greet.apply(obje, ['Hello']); // Output: Hello, John!
