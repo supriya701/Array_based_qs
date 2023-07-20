@@ -56,3 +56,27 @@ function greet(greeting) {
   console.log(`${greeting}, ${this.name}!`);
 }
 greet.apply(obje, ['Hello']); // Output: Hello, John!
+
+//--------------------------------------------------------------
+
+//Use of let
+for (let i = 1; i <= 5; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, 1000);
+}
+
+// //Use of var
+for (var i = 1; i <= 5; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, 1000);
+}
+//using Var how to achieve same op
+for (var i = 1; i <= 5; i++) {
+  (function (num) {
+    setTimeout(() => {
+      console.log(num);
+    }, 1000);
+  })(i);
+}
